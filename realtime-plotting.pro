@@ -31,7 +31,8 @@ SOURCES += \
 
 HEADERS += \
         mainwindow.h \
-    qcustomplot.h
+    qcustomplot.h \
+    proto_data.h
 
 FORMS += \
         mainwindow.ui
