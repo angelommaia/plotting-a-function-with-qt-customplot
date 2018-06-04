@@ -10,16 +10,19 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->plot->addGraph();
     ui->plot->graph(0)->setScatterStyle(QCPScatterStyle::ssCircle); //os pontos sao representados por um circulo
     //ui->plot->graph(0)->setLineStyle(QCPGraph::lsNone); //sem linha entre os pontos
-    //ui->plot->setInteraction(QCP::iRangeDrag); //permite arrastar e dar zoom no grafico
-    ui->plot->setInteraction(QCP::iRangeZoom);
+    ui->plot->setInteraction(QCP::iRangeDrag); //permite arrastar o grafico
+
+    ui->plot->setInteraction(QCP::iRangeZoom); //permite dar zoom no grafico
+
     ui->plot->xAxis->setRange(-8,8);
     ui->plot->yAxis->setRange(-8,8);
     ui->plot->xAxis->setLabel("Eixo x");
     ui->plot->yAxis->setLabel("Eixo y");
+
     ui->plot->legend->setVisible(true);
 
-    addRandomGraph();
-    ui->plot->rescaleAxes(true);
+    addRandomGraph(); //funcao que acrescenta um graf aleatorio definido no fim desse arquivo. deve ser usada mais tarde com o dado externo
+    ui->plot->rescaleAxes(true); ///preciso entender melhor o que isso faz de fato
 }
 
 MainWindow::~MainWindow(){
@@ -32,7 +35,7 @@ void MainWindow::addPoint(double x, double y){
 }
 
 void MainWindow::clearData(){
-    ui->plot->clearGraphs();
+    ui->plot->clearGraphs(); //limpa todos os graficos da tela
     ui->plot->replot();
     ui->plot->update();
 }
@@ -49,8 +52,8 @@ void MainWindow::on_btn_add_clicked(){
 }
 
 void MainWindow::on_btn_clear_clicked(){
-    clearData();
-  //  plot();
+    clearData(); //chama a funcao para limpar a tela ao apertar o botao "limpar tela" na gui
+  //  plot(); //estava dando crash com essa funcao
 }
 
 void MainWindow::addRandomGraph()

@@ -2,14 +2,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-int dataC(){
+int dataComit(){
 
     double eixo_x, eixo_y;
 
     for(int i=0;i<5;i++){
-
-    eixo_x=i;
-    eixo_y=i;
+        eixo_x=i;
+        eixo_y=i;
 }
-    return 0;
+return 0;
 }
