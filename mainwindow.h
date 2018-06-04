@@ -18,6 +18,7 @@ public:
     void addPoint(double x, double y);
     void clearData();
     void plot();
+    void addRandomGraph();
 
 private slots:
     void on_btn_add_clicked();
